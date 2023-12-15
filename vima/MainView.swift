@@ -12,6 +12,7 @@ struct MainView: View {
     @State private var toCreateRoom: Bool = false
     @State private var toFollowedList: Bool = false
     @State private var toUserProfile: Bool = false
+    @State private var menuFolded = true
 
     var body: some View {
         VStack {
@@ -31,7 +32,8 @@ struct MainView: View {
                 default:
                     break
                 }
-            }, state: FloatMenuViewState())
+                menuFolded = true
+            }, folded: $menuFolded)
         }
         .navigationDestination(isPresented: $toCreateRoom) {
             RoomView(host: true)

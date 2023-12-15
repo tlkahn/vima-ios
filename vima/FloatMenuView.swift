@@ -8,25 +8,21 @@
 import Foundation
 import SwiftUI
 
-class FloatMenuViewState: ObservableObject {
-    @Published var folded: Bool = true
-}
-
 struct FloatingMenuView: View {
     let buttons: [String]
     let onClick: (String) -> Void
-    @ObservedObject var state: FloatMenuViewState
+    @Binding var folded: Bool
 
     var body: some View {
         HStack {
             Spacer()
             VStack {
                 Spacer()
-                ForEach(state.folded ? ["ellipsis"] : buttons + ["minus"], id: \.self) { button in
+                ForEach(folded ? ["ellipsis"] : buttons + ["minus"], id: \.self) { button in
                     Button(action: {
                         withAnimation {
                             if button == "ellipsis" || button == "minus" {
-                                state.folded.toggle()
+                                folded.toggle()
                             } else {
                                 onClick(button)
                             }
