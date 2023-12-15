@@ -11,7 +11,8 @@ import SwiftUI
 struct MainView: View {
     var body: some View {
         VStack {
-            Text("Hello, World!")
+            Text("Hello world!")
+            FloatingMenuView(buttons: ["plus", "heart", "person"], onClick: {title in print(title)}, state: FloatMenuViewState())
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarTitle("Main View", displayMode: .inline)

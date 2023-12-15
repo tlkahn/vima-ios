@@ -20,6 +20,7 @@
 		B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7542B2C26FF00143077 /* NetworkService.swift */; };
 		B897C7572B2C2E6F00143077 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7562B2C2E6F00143077 /* Payload.swift */; };
 		B897C7592B2C70D500143077 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7582B2C70D500143077 /* MainView.swift */; };
+		B897C75B2B2C743600143077 /* FloatMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C75A2B2C743600143077 /* FloatMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		B897C7542B2C26FF00143077 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B897C7562B2C2E6F00143077 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		B897C7582B2C70D500143077 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B897C75A2B2C743600143077 /* FloatMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatMenuView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				B897C7542B2C26FF00143077 /* NetworkService.swift */,
 				B897C7562B2C2E6F00143077 /* Payload.swift */,
 				B897C7582B2C70D500143077 /* MainView.swift */,
+				B897C75A2B2C743600143077 /* FloatMenuView.swift */,
 			);
 			path = vima;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				B897C7592B2C70D500143077 /* MainView.swift in Sources */,
 				B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */,
 				B897C7212B2C149400143077 /* ContentView.swift in Sources */,
+				B897C75B2B2C743600143077 /* FloatMenuView.swift in Sources */,
 				B897C74B2B2C22BF00143077 /* Config.swift in Sources */,
 				B897C74D2B2C22DE00143077 /* BackgroundPlayer.swift in Sources */,
 				B897C71F2B2C149400143077 /* vimaApp.swift in Sources */,
