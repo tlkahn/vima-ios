@@ -58,13 +58,6 @@ extension MainView {
 }
 
 
-struct RoomView: View {
-    var host: Bool
-    var body: some View {
-        Text("Room View - Host: \(host ? "Yes" : "No")")
-    }
-}
-
 struct FollowedListView: View {
     var body: some View {
         Text("Followed Users List")

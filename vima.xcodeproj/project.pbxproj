@@ -21,6 +21,7 @@
 		B897C7572B2C2E6F00143077 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7562B2C2E6F00143077 /* Payload.swift */; };
 		B897C7592B2C70D500143077 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7582B2C70D500143077 /* MainView.swift */; };
 		B897C75B2B2C743600143077 /* FloatMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C75A2B2C743600143077 /* FloatMenuView.swift */; };
+		B897C75D2B2C950000143077 /* RoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C75C2B2C950000143077 /* RoomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		B897C7562B2C2E6F00143077 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 		B897C7582B2C70D500143077 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		B897C75A2B2C743600143077 /* FloatMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatMenuView.swift; sourceTree = "<group>"; };
+		B897C75C2B2C950000143077 /* RoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				B897C7562B2C2E6F00143077 /* Payload.swift */,
 				B897C7582B2C70D500143077 /* MainView.swift */,
 				B897C75A2B2C743600143077 /* FloatMenuView.swift */,
+				B897C75C2B2C950000143077 /* RoomView.swift */,
 			);
 			path = vima;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B897C75D2B2C950000143077 /* RoomView.swift in Sources */,
 				B897C7572B2C2E6F00143077 /* Payload.swift in Sources */,
 				B897C7592B2C70D500143077 /* MainView.swift in Sources */,
 				B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */,
