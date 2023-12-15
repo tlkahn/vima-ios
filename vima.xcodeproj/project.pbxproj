@@ -14,6 +14,11 @@
 		B897C7302B2C149600143077 /* vimaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C72F2B2C149600143077 /* vimaTests.swift */; };
 		B897C73A2B2C149600143077 /* vimaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7392B2C149600143077 /* vimaUITests.swift */; };
 		B897C73C2B2C149600143077 /* vimaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C73B2B2C149600143077 /* vimaUITestsLaunchTests.swift */; };
+		B897C74B2B2C22BF00143077 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C74A2B2C22BF00143077 /* Config.swift */; };
+		B897C74D2B2C22DE00143077 /* BackgroundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C74C2B2C22DE00143077 /* BackgroundPlayer.swift */; };
+		B897C7522B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B897C7512B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 */; };
+		B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7542B2C26FF00143077 /* NetworkService.swift */; };
+		B897C7572B2C2E6F00143077 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7562B2C2E6F00143077 /* Payload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		B897C7352B2C149600143077 /* vimaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vimaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B897C7392B2C149600143077 /* vimaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vimaUITests.swift; sourceTree = "<group>"; };
 		B897C73B2B2C149600143077 /* vimaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vimaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B897C74A2B2C22BF00143077 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		B897C74C2B2C22DE00143077 /* BackgroundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundPlayer.swift; sourceTree = "<group>"; };
+		B897C7512B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smoke_Sheet_4K_Motion_Background_Loop.mp4; sourceTree = "<group>"; };
+		B897C7542B2C26FF00143077 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B897C7562B2C2E6F00143077 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +104,15 @@
 		B897C71D2B2C149400143077 /* vima */ = {
 			isa = PBXGroup;
 			children = (
+				B897C74E2B2C23B400143077 /* Resource */,
 				B897C71E2B2C149400143077 /* vimaApp.swift */,
 				B897C7202B2C149400143077 /* ContentView.swift */,
 				B897C7222B2C149600143077 /* Assets.xcassets */,
 				B897C7242B2C149600143077 /* Preview Content */,
+				B897C74A2B2C22BF00143077 /* Config.swift */,
+				B897C74C2B2C22DE00143077 /* BackgroundPlayer.swift */,
+				B897C7542B2C26FF00143077 /* NetworkService.swift */,
+				B897C7562B2C2E6F00143077 /* Payload.swift */,
 			);
 			path = vima;
 			sourceTree = "<group>";
@@ -125,6 +140,22 @@
 				B897C73B2B2C149600143077 /* vimaUITestsLaunchTests.swift */,
 			);
 			path = vimaUITests;
+			sourceTree = "<group>";
+		};
+		B897C74E2B2C23B400143077 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B897C7502B2C23ED00143077 /* Videos */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B897C7502B2C23ED00143077 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				B897C7512B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 */,
+			);
+			path = Videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B897C7522B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 in Resources */,
 				B897C7262B2C149600143077 /* Preview Assets.xcassets in Resources */,
 				B897C7232B2C149600143077 /* Assets.xcassets in Resources */,
 			);
@@ -257,7 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B897C7572B2C2E6F00143077 /* Payload.swift in Sources */,
+				B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */,
 				B897C7212B2C149400143077 /* ContentView.swift in Sources */,
+				B897C74B2B2C22BF00143077 /* Config.swift in Sources */,
+				B897C74D2B2C22DE00143077 /* BackgroundPlayer.swift in Sources */,
 				B897C71F2B2C149400143077 /* vimaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
