@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 struct NetworkService {
-    let rootUrl: String
+    let baseURL: String
     private func getToken() -> String? {
         return UserDefaults.standard.object(forKey: "token") as? String
     }
 
     func get<U>(from: String) -> AnyPublisher<U, Error> where U: Decodable {
-        let url = URL(string: rootUrl + from)!
+        let url = URL(string: baseURL + from)!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         if getToken() != nil {
@@ -27,7 +27,7 @@ struct NetworkService {
     func post<T, U>(_ entry: T, to: String) -> AnyPublisher<U, Error>
         where T: Encodable, U: Decodable
     {
-        let url = URL(string: rootUrl + to)!
+        let url = URL(string: baseURL + to)!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")

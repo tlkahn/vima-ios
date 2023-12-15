@@ -8,20 +8,25 @@
 import Foundation
 
 enum Payload {
-    struct LoginCredentials: Codable {
-        let name: String
-        let password: String
-    }
-    struct UserData: Decodable {
-        let id: Int
-        let name: String
-        let phone: String?
-    }
-    struct LoginResponse: Decodable {
-        let status: Bool
-        let message: String?
-        let token: String?
-        let userData: UserData?
+    enum User {
+        enum Auth {
+            struct Credentials: Codable {
+                let name: String
+                let password: String
+            }
+
+            struct Response: Decodable {
+                let status: Bool
+                let message: String?
+                let token: String?
+                let userData: Data?
+            }
+        }
+        struct Data: Decodable {
+            let id: Int
+            let name: String
+            let phone: String?
+        }
     }
 
 }

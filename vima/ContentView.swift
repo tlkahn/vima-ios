@@ -49,6 +49,7 @@ struct ContentView: View {
                         VStack {
                             Text("Sign in").onTapGesture {
                                 print("Signing in...")
+                                signin()
                             }
                             .font(.headline)
                             .foregroundColor(.white)
@@ -57,11 +58,9 @@ struct ContentView: View {
                             .background(Color.opacity(Color.secondary)(0.8))
                             .cornerRadius(15.0)
                             .padding(.bottom, 30)
-                            .onTapGesture {
-                                login()
-                            }
                             Text("Sign up").onTapGesture {
                                 print("Signing up...")
+                                signup()
                             }
                             .font(.headline)
                             .foregroundColor(.white)
@@ -91,16 +90,41 @@ extension ContentView {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
     }
 
-    private func login() {
-        let networkService = NetworkService(rootUrl: "http://localhost:3000")
-        let credentials = Payload.LoginCredentials(name: state.username, password: state.password)
-        networkService.post(credentials, to: "/login").sink(receiveCompletion: { completion in
+    private enum UserAuthType {
+        case signup
+        case signin
+    }
+
+    private func performAuthentication(credentials: Payload.User.Auth.Credentials, authType: UserAuthType) {
+        let networkService = NetworkService(baseURL: "http://localhost:3000")
+
+        let endpoint: String
+
+        switch authType {
+        case .signin:
+            endpoint = "/login"
+        case .signup:
+            endpoint = "/register"
+        }
+
+        networkService.post(credentials, to: endpoint)
+            .sink(receiveCompletion: { completion in
                 if case let .failure(error) = completion {
                     print("Error: \(error)")
                 }
-            }, receiveValue: { (response: Payload.LoginResponse) in
+            }, receiveValue: { (response: Payload.User.Auth.Response) in
                 print("Success: Received response - \(response)")
             }).store(in: &cancellables)
-
     }
+
+    private func signin() {
+        let credentials = Payload.User.Auth.Credentials(name: state.username, password: state.password)
+        performAuthentication(credentials: credentials, authType: .signin)
+    }
+
+    private func signup() {
+        let credentials = Payload.User.Auth.Credentials(name: state.username, password: state.password)
+        performAuthentication(credentials: credentials, authType: .signup)
+    }
+
 }
