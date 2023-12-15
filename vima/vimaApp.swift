@@ -11,7 +11,8 @@ import SwiftUI
 struct vimaApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let contentViewState = ContentViewState()
+            ContentView(state: contentViewState)
         }
     }
 }
