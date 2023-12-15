@@ -19,6 +19,7 @@
 		B897C7522B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B897C7512B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 */; };
 		B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7542B2C26FF00143077 /* NetworkService.swift */; };
 		B897C7572B2C2E6F00143077 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7562B2C2E6F00143077 /* Payload.swift */; };
+		B897C7592B2C70D500143077 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897C7582B2C70D500143077 /* MainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		B897C7512B2C240300143077 /* Smoke_Sheet_4K_Motion_Background_Loop.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Smoke_Sheet_4K_Motion_Background_Loop.mp4; sourceTree = "<group>"; };
 		B897C7542B2C26FF00143077 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		B897C7562B2C2E6F00143077 /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		B897C7582B2C70D500143077 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				B897C74C2B2C22DE00143077 /* BackgroundPlayer.swift */,
 				B897C7542B2C26FF00143077 /* NetworkService.swift */,
 				B897C7562B2C2E6F00143077 /* Payload.swift */,
+				B897C7582B2C70D500143077 /* MainView.swift */,
 			);
 			path = vima;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B897C7572B2C2E6F00143077 /* Payload.swift in Sources */,
+				B897C7592B2C70D500143077 /* MainView.swift in Sources */,
 				B897C7552B2C26FF00143077 /* NetworkService.swift in Sources */,
 				B897C7212B2C149400143077 /* ContentView.swift in Sources */,
 				B897C74B2B2C22BF00143077 /* Config.swift in Sources */,
