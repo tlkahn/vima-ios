@@ -62,12 +62,12 @@ struct ContentView: View {
                     }
                     .frame(width: geo.size.width / 2, height: geo.size.height, alignment: .center)
                     .onTapGesture {
-                                self.endEditing()
-                            }
+                        self.endEditing()
+                    }
                     Spacer()
                 }
                 .alert("Invalid username or password", isPresented: $state.displayInvalidLoginAlert) {
-                            Button("OK", role: .cancel) { }
+                    Button("OK", role: .cancel) { }
                 }
             }
 
@@ -78,5 +78,5 @@ struct ContentView: View {
 extension ContentView {
     private func endEditing() {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to:nil, from:nil, for:nil)
-       }
+    }
 }
