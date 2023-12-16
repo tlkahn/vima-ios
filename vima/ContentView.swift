@@ -102,7 +102,7 @@ extension ContentView {
     }
 
     private func performAuthentication(credentials: Payload.User.Auth.Credentials, authType: UserAuthType) {
-        let networkService = NetworkService(baseURL: "http://localhost:3000")
+        let networkService = NetworkService(baseURL: Config.BASE_URL)
 
         let endpoint: String
 

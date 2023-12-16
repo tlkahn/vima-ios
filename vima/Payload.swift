@@ -29,4 +29,12 @@ enum Payload {
         }
     }
 
+    struct Music: Codable, Equatable, Identifiable, Hashable {
+        let id: Int
+        let title: String?
+        let artist: String?
+        let url: String
+        let duration: Float
+    }
+
 }
