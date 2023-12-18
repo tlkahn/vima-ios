@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>dev</key>
+    <dict>
+        <key>RAILS_SERVER</key>
+        <string>http://localhost:3000</string>
+        <key>MUSIC_SERVER</key>
+        <string>http://localhost:3000</string>
+        <key>TOKEN_SERVER</key>
+        <string>http://localhost:3000</string>
+        <key>HEARTBEAT_SERVER</key>
+        <string>ws://localhost:3000</string>
+        <key>AVATAR_SERVER</key>
+        <string>http://localhost:3000/get_avatars</string>
+    </dict>
+    <key>test</key>
+    <dict>
+        <key>RAILS_SERVER</key>
+        <string>http://localhost:3000</string>
+        <key>MUSIC_SERVER</key>
+        <string>http://localhost:3333</string>
+        <key>TOKEN_SERVER</key>
+        <string>http://localhost:8082</string>
+        <key>HEARTBEAT_SERVER</key>
+        <string>ws://localhost:8765</string>
+        <key>AVATAR_SERVER</key>
+        <string>http://localhost:8000/get_avatars</string>
+    </dict>
+    <key>prod</key>
+    <dict>
+        <key>RAILS_SERVER</key>
+        <string>http://localhost:3000</string>
+        <key>MUSIC_SERVER</key>
+        <string>http://localhost:3333</string>
+        <key>TOKEN_SERVER</key>
+        <string>http://localhost:8082</string>
+        <key>HEARTBEAT_SERVER</key>
+        <string>ws://localhost:8765</string>
+        <key>AVATAR_SERVER</key>
+        <string>http://localhost:8000/get_avatars</string>
+    </dict>
+</dict>
+</plist>
