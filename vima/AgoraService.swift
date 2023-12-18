@@ -10,7 +10,7 @@ import Combine
 import Foundation
 import SwiftUI
 
-class Broadcaster: NSObject, AgoraRtcEngineDelegate {
+class Broadcaster: NSObject, AgoraRtcEngineDelegate, ObservableObject {
     var channelName: String
     var uid: UInt
     var role: AgoraClientRole

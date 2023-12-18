@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import AgoraRtcKit
 
 struct MainView: View {
     @State private var toCreateRoom: Bool = false
@@ -36,7 +37,11 @@ struct MainView: View {
             }, folded: $menuFolded)
         }
         .navigationDestination(isPresented: $toCreateRoom) {
-            RoomView(host: true)
+            // TODO: get user var after log in
+            let channelName = "user.name"
+            let uid: UInt = 12345
+            let role: AgoraClientRole = .broadcaster
+            RoomView(channelName: channelName, role: role, uid: uid)
         }
         .navigationDestination(isPresented: $toFollowedList) {
             FollowedListView()
