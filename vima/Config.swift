@@ -7,45 +7,52 @@
 
 import Foundation
 
-enum Config {
-    static let BG_VIDEO_URL = Bundle.main.url(forResource: "Smoke_Sheet_4K_Motion_Background_Loop", withExtension: "mp4")!
-    static let BASE_URL = "http://localhost:3000"
-    enum Agora {
-        static let APP_ID = ""
-        
-    }
-    enum Deployment {
-        enum Phase {
-            case dev
-            case test
-            case prod
-        }
-    }
-    static let APP_DEPLOYMENT_PHASE: Deployment.Phase = .dev
-    enum Servers {
-        private static func load() -> [String: [String: String]]? {
-            guard let url = Bundle.main.url(forResource: "server_config", withExtension: "plist"),
-                  let data = try? Data(contentsOf: url) else {
-                return nil
-            }
-            return try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: [String: String]]
-        }
-
-        private static let data = load()
-
-        private static func value(for key: String) -> String {
-            switch APP_DEPLOYMENT_PHASE {
-            case .dev:
-                return data?["dev"]?[key] ?? ""
-            case .test:
-                return data?["test"]?[key] ?? ""
-            case .prod:
-                return data?["prod"]?[key] ?? ""
-            }
-        }
-
-        static var TOKEN: String {
-            return value(for: "TOKEN_SERVER")
-        }
-    }
+enum DeploymentPhase {
+    case dev
+    case test
+    case prod
 }
+
+struct Config {
+    static let shared = Config()
+
+    private init() {} // Disable the constructor for singleton
+
+    let bgVideoURL = Bundle.main.url(forResource: "Smoke_Sheet_4K_Motion_Background_Loop", withExtension: "mp4")!
+    let baseURL = "http://localhost:3000"
+    let agoraAppID = "ed48e0cee69e41ffa303e26737ec210f"
+
+
+    let appDeploymentPhase: DeploymentPhase = .dev
+
+    struct Servers {
+        private let data: [String: [String: String]]
+
+        init() {
+            guard let url = Bundle.main.url(forResource: "servers", withExtension: "plist"),
+                  let data = try? Data(contentsOf: url),
+                  let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: [String: String]] else {
+                self.data = [:]
+                return
+            }
+            self.data = plist
+        }
+
+        func value(for key: String, deploymentPhase: DeploymentPhase) -> String {
+            switch deploymentPhase {
+            case .dev:
+                return data["dev"]?[key] ?? ""
+            case .test:
+                return data["test"]?[key] ?? ""
+            case .prod:
+                return data["prod"]?[key] ?? ""
+            }
+        }
+    }
+
+    static let servers = Servers()
+}
+
+// Usage
+// let config = Config.shared
+// let tokenServer = config.servers.value(for: "TOKEN_SERVER", deploymentPhase: config.appDeploymentPhase)

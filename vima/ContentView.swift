@@ -16,6 +16,7 @@ class ContentViewState: ObservableObject {
 
 struct ContentView: View {
     private let verticalPaddingForForm = 40
+    private let appConfig = Config.shared
     // By using the `@State` property wrapper, you ensure that the
     // `cancellables` set will persist across view updates and manage the
     // lifecycle of Combine subscriptions. When the `ContentView` is
@@ -102,7 +103,7 @@ extension ContentView {
     }
 
     private func performAuthentication(credentials: Payload.User.Auth.Credentials, authType: UserAuthType) {
-        let networkService = NetworkService(baseURL: Config.BASE_URL)
+        let networkService = NetworkService(baseURL: appConfig.baseURL)
 
         let endpoint: String
 

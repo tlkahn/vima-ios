@@ -32,6 +32,8 @@ struct RoomView: View {
                 break
             case "xmark":
                 break
+            case "calendar":
+                break
             default:
                 break
             }

@@ -13,12 +13,13 @@ import SwiftUI
 struct BackgroundPlayerView: UIViewRepresentable {
     static let loopingPlayerView = LoopingPlayerUIView(frame: .zero)
     static var player = loopingPlayerView.player
+    static let config = Config.shared
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
 
-    var videoUrl: URL? = Config.BG_VIDEO_URL
+    var videoUrl: URL? = config.bgVideoURL
 
     class Coordinator: NSObject {
         var parent: BackgroundPlayerView

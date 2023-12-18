@@ -133,7 +133,7 @@ class Broadcaster: NSObject, AgoraRtcEngineDelegate, ObservableObject {
 
     private func setupAgoraKit(delegate _: Broadcaster) {
         let config = AgoraRtcEngineConfig()
-        config.appId = Config.Agora.APP_ID
+        config.appId = Config.shared.agoraAppID
         config.areaCode = AgoraAreaCodeType.global
         let logConfig = AgoraLogConfig()
         logConfig.level = .info
@@ -142,21 +142,25 @@ class Broadcaster: NSObject, AgoraRtcEngineDelegate, ObservableObject {
     }
 
     private struct TokenResponse: Decodable {
-        var code: String
         var token: String
     }
 
     private struct TokenRequestParams: Encodable {
+        let agorartc: AgoraRTC
+    }
+
+    struct AgoraRTC: Encodable {
         let uid: UInt
-        let channelName: String
+        let channel_name: String
         let role: Int
     }
 
     private func fetchToken(channelName: String, role: AgoraClientRole, uid: UInt) -> AnyPublisher<TokenResponse, Error>? {
-        let networkService = NetworkService(baseURL: Config.Servers.TOKEN)
-        let param = TokenRequestParams(uid: uid, channelName: channelName, role: role.rawValue)
+        let tokenServer = Config.servers.value(for: "TOKEN_SERVER", deploymentPhase: Config.shared.appDeploymentPhase)
+        let networkService = NetworkService(baseURL: tokenServer)
+        let param = TokenRequestParams(agorartc: AgoraRTC(uid: uid, channel_name: channelName, role: role.rawValue))
 
-        return networkService.post(param, to: "/")
+        return networkService.post(param, to: "/tokens/agorartc")
     }
 
     private func getDocumentsDirectory() -> URL {

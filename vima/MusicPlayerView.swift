@@ -45,6 +45,7 @@ struct PlayPauseButton: View {
 
 
 struct MusicListView: View {
+    let appConfig = Config.shared
     @State var musicList: [Payload.Music]? = nil
     @State private var musicInPlay: Payload.Music? = nil
     @State private var audioPlayer: AVPlayer? = nil
@@ -130,7 +131,7 @@ extension MusicListView {
     }
 
     func loadMusicList() {
-        let networkService = NetworkService(baseURL: Config.BASE_URL)
+        let networkService = NetworkService(baseURL: self.appConfig.baseURL)
 
         networkService.get(from: "/musics")
             .sink { completion in
