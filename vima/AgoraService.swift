@@ -10,6 +10,14 @@ import Combine
 import Foundation
 import SwiftUI
 
+enum BroadcasterError: Error {
+    case EmptyAgoraKitInstance
+    case JoinAgoraChannelError(errCode: Int32)
+    case InitError
+    case EmptyTokenValue
+    case LeaveAgoraChannelError(errCode: Int32)
+}
+
 class Broadcaster: NSObject, AgoraRtcEngineDelegate, ObservableObject {
     var channelName: String
     var uid: UInt
@@ -18,14 +26,6 @@ class Broadcaster: NSObject, AgoraRtcEngineDelegate, ObservableObject {
     @State private var cancellables = Set<AnyCancellable>()
     @State private var initialized: Bool = false
     @State private var joined: Bool = false
-    private enum BroadcasterError: Error {
-        case EmptyAgoraKitInstance
-        case JoinAgoraChannelError(errCode: Int32)
-        case InitError
-        case EmptyTokenValue
-        case LeaveAgoraChannelError(errCode: Int32)
-    }
-
     private(set) var token: String?
     private var bags = Set<AnyCancellable>()
     var agoraKit: AgoraRtcEngineKit!

@@ -62,6 +62,3 @@ struct RoomView: View {
     }
 }
 
-enum BroadcasterError: Error {
-    case InitError
-}
